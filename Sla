@@ -1,0 +1,45 @@
+!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagem Piscante com Som</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: black;
+        }
+        img {
+            display: none; /* Começa oculta */
+            width: 300px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: white;">Clique para começar!</h1>
+    <img id="imagem" src="https://pin.it/nkkKmVIiN" alt="Imagem Piscante">
+    <button onclick="iniciarPiscar()">Iniciar</button>
+    
+    <audio id="som" src=""></audio> <!-- Troque pelo caminho do seu áudio -->
+
+    <script>
+        function iniciarPiscar() {
+            let imagem = document.getElementById("imagem");
+            let audio = document.getElementById("som");
+            
+            audio.play(); // Toca o áudio
+            
+            setInterval(() => {
+                imagem.style.display = (imagem.style.display === "none") ? "block" : "none";
+            }, 500); // Altere o tempo para ajustar a frequência do piscar
+        }
+    </script>
+</body>
+</html>
